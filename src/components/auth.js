@@ -1,6 +1,6 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import { auth, googleAuthProvider, firebaseDatabase,  } from '../config/firebase';
+import { useState, useEffect, useCallback } from 'react';
+import { auth, googleAuthProvider, firebaseDatabase  } from '../config/firebase';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, signInWithPopup, onAuthStateChanged } from 'firebase/auth';
 import { collection, addDoc, doc, updateDoc, deleteDoc, onSnapshot, where, query } from 'firebase/firestore';
 
@@ -63,7 +63,7 @@ const Auth = () => {
     });  
   }
 
-  const getData = () => {
+  const getData = useCallback(() => {
     try {
        onSnapshot(queryAge, (data) => {
          console.log(data.docs.map((item) => {
@@ -74,7 +74,7 @@ const Auth = () => {
         console.log(error.message);
         alert(error.message);
     }
-  }
+  }, [queryAge]);
 
   const updateTheDoc = () => {
     const docToUpdate = doc(firebaseDatabase, "users", "r4WduktBd5YUBQe5QU2p");
@@ -106,7 +106,7 @@ const Auth = () => {
         alert("User is not logged In");
      }
     });
-  }, []);
+  }, [getData]);
 
   return (
     <div>
