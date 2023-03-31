@@ -1,0 +1,59 @@
+body {
+    background-color: wheat;
+}
+
+.center {
+position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.signin {
+    color: chartreuse;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+
+.emailclass {
+    border: 1px solid #ccc;
+    padding: 5px;
+    font-size: 16px;
+    color: #555;
+}
+
+.emailclass:focus {
+    outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.passwordclass {
+    border: 1px solid #ccc;
+    padding: 5px;
+    font-size: 16px;
+    color: #555;
+}
+
+.passwordclass:focus {
+    outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.mybutton {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    padding: 5px 10px;
+    font-size: 16px;
+    display: "flex"; 
+    align-items: "center";
+    cursor: pointer;
+}
+
+.mybutton:hover {
+    background-color: #0069d9;
+}
